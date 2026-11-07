@@ -1,0 +1,17 @@
+import { Router } from 'express';
+import {
+  createStudent,
+  getStudentById,
+  getStudents,
+  updateStudent,
+  deleteStudent
+} from '../controllers/studentController.js';
+
+const router = Router();
+
+router.get('/', getStudents);
+router.get('/:id', getStudentById);
+router.post('/', createStudent);
+router.put('/:id', updateStudent);
+router.delete('/:id', deleteStudent);
+export default router;

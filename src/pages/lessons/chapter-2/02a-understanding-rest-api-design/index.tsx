@@ -1,0 +1,5 @@
+import Lesson from '../../../../docs/ite303/chapter-2/02a-understanding-rest-api-design.mdx';
+
+export default function LessonPage() {
+  return <Lesson />;
+}
