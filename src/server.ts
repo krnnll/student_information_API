@@ -4,6 +4,7 @@ import express from 'express';
 import studentRoutes from './routes/studentRoutes.js';
 
 const app = express();
+const port = Number(process.env.PORT ?? 4000);
 
 // 2.1.3 - middleware
 //app.use((req, res, next) => {
@@ -37,7 +38,7 @@ app.use((req, res) => {
   });
 });
 
-app.listen(4000, () => {
+app.listen(port, () => {
   pool.query('SELECT NOW()')
     .then(() => console.log('Database connected successfully'))
     .catch((error: unknown) => {
@@ -58,5 +59,5 @@ app.listen(4000, () => {
       }
     });
 
-  console.log('Server running at http://localhost:4000');
+  console.log(`Server running at http://localhost:${port}`);
 });
