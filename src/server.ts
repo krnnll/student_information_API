@@ -54,7 +54,7 @@ app.listen(port, () => {
         !process.env.DATABASE_SSL_CA_CERT_PATH
       ) {
         console.error(
-          'Download the database root certificate from Supabase Database Settings and set DATABASE_SSL_CA_CERT_PATH in .env.',
+          'Download the Supabase database root certificate and set DATABASE_SSL_CA_CERT_PATH to its path. On Render, upload it as a Secret File.',
         );
       }
     });
